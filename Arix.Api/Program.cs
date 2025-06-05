@@ -1,16 +1,35 @@
 using Arix.Api;
-using Arix.Domain.TelegramHandler;
+using Arix.Infrastructure.Menus.Contributors;
+using Arix.Infrastructure.Menus.Interfaces;
+using Arix.Infrastructure.Menus.Navigations;
+using Arix.Infrastructure.Menus.Services;
+using Arix.Infrastructure.TelegramHandler;
 using Telegram.Bot;
 
-var builder = Host.CreateApplicationBuilder(args);
-builder.Services.AddHostedService<TelegramBotWorker>();
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        var builder = Host.CreateApplicationBuilder(args);
+        builder.Services.AddHostedService<TelegramBotWorker>();
 
-var config = builder.Configuration;
+        var config = builder.Configuration;
 
-var botToken = "";
-builder.Services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(botToken));
+        string botToken = Environment.GetEnvironmentVariable("Arix");
 
-builder.Services.AddSingleton<ITelegramHandler, TelegramHandler>();
+        builder.Services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(botToken));
+        builder.Services.AddSingleton<IMenuContributor, HomeMenuContributor>();
+        builder.Services.AddSingleton<IMenuContributor, DealsMenuContributor>();
+        builder.Services.AddSingleton<IMenuContributor, MainMenuContributor>();
+        builder.Services.AddSingleton<IMenuContributor, SettingsMenuContributor>();
+        builder.Services.AddSingleton<IMenuContributor, BalanceMenuContributor>();
+        builder.Services.AddSingleton<IMenuContributor, ChallengeMenuContributor>();
 
-var host = builder.Build();
-host.Run();
+        builder.Services.AddSingleton<ITelegramHandler, TelegramHandler>();
+        builder.Services.AddSingleton<IMenuService, MenuService>();
+
+
+        var host = builder.Build();
+        host.Run();
+    }
+}

@@ -2,7 +2,7 @@ using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Types.Enums;
-using Arix.Domain.TelegramHandler;
+using Arix.Infrastructure.TelegramHandler;
 
 namespace Arix.Api;
 

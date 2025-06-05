@@ -7,11 +7,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.0" />
-    <PackageReference Include="Telegram.Bot" Version="22.5.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Arix.Bot\Arix.Bot.csproj" />
     <ProjectReference Include="..\Arix.Infrastructure\Arix.Infrastructure.csproj" />
   </ItemGroup>
 

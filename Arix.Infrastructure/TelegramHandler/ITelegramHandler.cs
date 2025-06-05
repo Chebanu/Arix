@@ -1,7 +1,7 @@
 ﻿using Telegram.Bot.Types;
 using Telegram.Bot;
 
-namespace Arix.Domain.TelegramHandler;
+namespace Arix.Infrastructure.TelegramHandler;
 
 public interface ITelegramHandler
 {
