@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arix.Domain", "Arix.Domain\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arix.Infrastructure", "Arix.Infrastructure\Arix.Infrastructure.csproj", "{E68C22C7-565D-4AF9-AF04-B32081758486}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arix.DataAccess", "Arix.DataAccess\Arix.DataAccess.csproj", "{0075D2B4-9692-4867-B242-F28D3DDD5B91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +35,15 @@ Global
 		{E68C22C7-565D-4AF9-AF04-B32081758486}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E68C22C7-565D-4AF9-AF04-B32081758486}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E68C22C7-565D-4AF9-AF04-B32081758486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0075D2B4-9692-4867-B242-F28D3DDD5B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0075D2B4-9692-4867-B242-F28D3DDD5B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0075D2B4-9692-4867-B242-F28D3DDD5B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0075D2B4-9692-4867-B242-F28D3DDD5B91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF35AB62-953F-4290-8A3B-56ABE6968FB1}
 	EndGlobalSection
 EndGlobal
