@@ -1,9 +1,11 @@
 using Arix.Api;
+using Arix.DataAccess;
 using Arix.Infrastructure.Menus.Contributors;
 using Arix.Infrastructure.Menus.Interfaces;
 using Arix.Infrastructure.Menus.Navigations;
 using Arix.Infrastructure.Menus.Services;
 using Arix.Infrastructure.TelegramHandler;
+using Microsoft.EntityFrameworkCore;
 using Telegram.Bot;
 
 internal class Program
@@ -16,6 +18,9 @@ internal class Program
         var config = builder.Configuration;
 
         string botToken = Environment.GetEnvironmentVariable("Arix");
+
+        builder.Services.AddDbContext<ArixDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
         builder.Services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(botToken));
         builder.Services.AddSingleton<IMenuContributor, HomeMenuContributor>();
